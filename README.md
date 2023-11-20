@@ -31,7 +31,7 @@ This repository contains a series of practical Solidity exercises designed for b
 Clone the repository:
 
 ```sh
-git clone [repository-url]
+git clone https://github.com/mathieu-bour/mewo-exercises.git
 ```
 
 Compile the contracts:
