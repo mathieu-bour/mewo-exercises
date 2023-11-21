@@ -24,6 +24,7 @@ contract OwnershipControl {
    */
   modifier onlyOwner() {
     // TODO: Require that the caller is the owner of the contract
+    require(owner == msg.sender, "Not owner");
     _;
   }
 
@@ -33,6 +34,9 @@ contract OwnershipControl {
    */
   function changeOwner(address newOwner) public onlyOwner {
     // TODO: Implement the changeOwner function to allow the current owner to transfer ownership
+    address oldOwner = owner;
+    owner = newOwner;
+    emit OwnershipTransferred(oldOwner, newOwner);
   }
 
   /**

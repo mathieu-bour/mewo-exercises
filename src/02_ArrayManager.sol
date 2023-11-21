@@ -14,6 +14,7 @@ contract ArrayManager {
    */
   function addValue(uint256 value) public {
     // TODO: Implement the addValue function to add a value to the array
+    values.push(value);
   }
 
   /**
@@ -23,6 +24,7 @@ contract ArrayManager {
    */
   function getValue(uint256 index) public view returns (uint256) {
     // TODO: Implement the getValue function to return a value from the array
+    return values[index];
   }
 
   /**
@@ -31,5 +33,11 @@ contract ArrayManager {
    */
   function removeValue(uint256 index) public {
     // TODO: Implement the removeValue function to remove a value from the array
+    // delete values[index];
+    for (uint256 j = index; j < values.length - 1; j++) {
+      values[j] = values[j + 1];
+    }
+
+    values.pop();
   }
 }

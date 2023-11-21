@@ -17,6 +17,8 @@ contract EventLogger {
    */
   function addData(uint256 _data) public {
     // TODO: Implement the addData function and emit the corresponding event
+    data.push(_data);
+    emit DataAdded(_data, msg.sender);
   }
 
   /**
@@ -25,7 +27,15 @@ contract EventLogger {
    */
   function removeData(uint256 index) public {
     // TODO: Implement the removeData function and emit the corresponding event
+    uint256 removed = data[index];
+
     // Make sure to check if the index is within the bounds of the array
+    for (uint256 j = index; j < data.length - 1; j++) {
+      data[j] = data[j + 1];
+    }
+
+    data.pop();
+    emit DataRemoved(removed, msg.sender);
   }
 
   /**
@@ -36,5 +46,7 @@ contract EventLogger {
   function getData(uint256 index) public view returns (uint256) {
     // TODO: Implement the getData function to return data at a specific index
     // Make sure to check if the index is within the bounds of the array
+    require(index < data.length, "Out of bounds");
+    return data[index];
   }
 }

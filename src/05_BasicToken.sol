@@ -10,6 +10,7 @@ contract BasicToken {
   uint256 private totalSupply;
 
   // TODO: Declare an event for token transfer
+  event Transfer(address indexed from, address indexed to, uint256 amount);
 
   /**
    * @dev Mint tokens to a specified address

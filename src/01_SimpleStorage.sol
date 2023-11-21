@@ -14,6 +14,7 @@ contract SimpleStorage {
    */
   function store(uint256 value) public {
     // TODO: Implement the store function to update the _storedValue variable
+    _storedValue = value;
   }
 
   /**
@@ -22,5 +23,6 @@ contract SimpleStorage {
    */
   function retrieve() public view returns (uint256) {
     // TODO: Implement the retrieve function to return the _storedValue
+    return _storedValue;
   }
 }

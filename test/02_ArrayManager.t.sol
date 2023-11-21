@@ -19,9 +19,9 @@ contract ArrayManagerTest is Test {
   }
 
   function testRemoveValue() public {
-    arrayManager.addValue(1);
-    arrayManager.addValue(2);
-    arrayManager.removeValue(0);
+    arrayManager.addValue(1); // [1]
+    arrayManager.addValue(2); // [1,2]
+    arrayManager.removeValue(0); // [2] // [0, 2]
     assertEq(arrayManager.getValue(0), 2, "First value should now be 2");
   }
 }
