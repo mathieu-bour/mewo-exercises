@@ -16,7 +16,7 @@ contract SimpleLotteryTest is Test {
   function testEnterLottery() public {
     for (uint256 i = 0; i < maxParticipants; i++) {
       address participant = address(uint160(uint256(keccak256(abi.encodePacked(i)))));
-      vm.prank(participant);
+      hoax(participant, ticketPrice);
       simpleLottery.enterLottery{ value: ticketPrice }();
       assertEq(simpleLottery.getNumberOfParticipants(), i + 1, "Participant count should increase");
     }
@@ -31,7 +31,7 @@ contract SimpleLotteryTest is Test {
     // Fill up the lottery
     for (uint256 i = 0; i < maxParticipants; i++) {
       address participant = address(uint160(uint256(keccak256(abi.encodePacked(i)))));
-      vm.prank(participant);
+      hoax(participant, ticketPrice);
       simpleLottery.enterLottery{ value: ticketPrice }();
     }
 
@@ -39,7 +39,7 @@ contract SimpleLotteryTest is Test {
     vm.expectRevert("Lottery is full");
     address extraParticipant =
       address(uint160(uint256(keccak256(abi.encodePacked(maxParticipants)))));
-    vm.prank(extraParticipant);
+    hoax(extraParticipant, ticketPrice);
     simpleLottery.enterLottery{ value: ticketPrice }();
   }
 
@@ -48,7 +48,7 @@ contract SimpleLotteryTest is Test {
     // Enter max participants to trigger winner selection
     for (uint256 i = 0; i < maxParticipants; i++) {
       address participant = address(uint160(uint256(keccak256(abi.encodePacked(i)))));
-      vm.prank(participant);
+      hoax(participant, ticketPrice);
       simpleLottery.enterLottery{ value: ticketPrice }();
     }
 
