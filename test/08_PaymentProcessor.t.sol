@@ -13,6 +13,8 @@ contract PaymentProcessorTest is Test {
     initialBalance = address(paymentProcessor).balance;
   }
 
+  receive() external payable { }
+
   function testReceivePayment() public {
     uint256 paymentAmount = 1 ether;
     payable(address(paymentProcessor)).transfer(paymentAmount);
