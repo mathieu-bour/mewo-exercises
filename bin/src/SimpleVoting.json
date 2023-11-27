@@ -1,0 +1,514 @@
+{
+    "contractName": "SimpleVoting",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "string[]",
+                    "name": "_options",
+                    "type": "string[]"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "options",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "option",
+                    "type": "string"
+                }
+            ],
+            "name": "totalVotesFor",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "option",
+                    "type": "string"
+                }
+            ],
+            "name": "vote",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"_options\",\"type\":\"string[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"options\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"option\",\"type\":\"string\"}],\"name\":\"totalVotesFor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"option\",\"type\":\"string\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Basic voting mechanism\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Constructor to create a voting contract with given options\",\"params\":{\"_options\":\"The list of voting options\"}},\"totalVotesFor(string)\":{\"details\":\"Get the total votes for a given option\",\"params\":{\"option\":\"The option to query\"},\"returns\":{\"_0\":\"The total votes for the option\"}},\"vote(string)\":{\"details\":\"Cast a vote for a given option\",\"params\":{\"option\":\"The option to vote for\"}}},\"title\":\"SimpleVoting\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/mathieu/Code/mathieu-bour/mewo-exercises/src/06_SimpleVoting.sol\":\"SimpleVoting\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mathieu/Code/mathieu-bour/mewo-exercises/src/06_SimpleVoting.sol\":{\"keccak256\":\"0x086730377899b8220f79c61abc34be981498c33f241e0abb170b2e3caadbe002\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f826f19bfc3be1463531a6769ef6c8db205ccf3b655ff03f0984277e592f6df0\",\"dweb:/ipfs/QmPDguDV4Te2ZUTGP2PPScXAhJgdbt3tzskLRPz6fah2Ja\"]}},\"version\":1}",
+    "bytecode": "608060405234801561000f575f80fd5b5060405161069138038061069183398101604081905261002e91610149565b8051610040905f906020840190610047565b50506103af565b828054828255905f5260205f2090810192821561008b579160200282015b8281111561008b578251829061007b90826102f0565b5091602001919060010190610065565b5061009792915061009b565b5090565b80821115610097575f6100ae82826100b7565b5060010161009b565b5080546100c39061026c565b5f825580601f106100d2575050565b601f0160209004905f5260205f20908101906100ee91906100f1565b50565b5b80821115610097575f81556001016100f2565b634e487b7160e01b5f52604160045260245ffd5b604051601f8201601f191681016001600160401b038111828210171561014157610141610105565b604052919050565b5f602080838503121561015a575f80fd5b82516001600160401b0380821115610170575f80fd5b8185019150601f86601f840112610185575f80fd5b82518281111561019757610197610105565b8060051b6101a6868201610119565b918252848101860191868101908a8411156101bf575f80fd5b87870192505b8383101561025e578251868111156101db575f80fd5b8701603f81018c136101eb575f80fd5b88810151878111156101ff576101ff610105565b610210818801601f19168b01610119565b81815260408e81848601011115610225575f80fd5b5f5b83811015610242578481018201518382018e01528c01610227565b50505f9181018b019190915283525091870191908701906101c5565b9a9950505050505050505050565b600181811c9082168061028057607f821691505b60208210810361029e57634e487b7160e01b5f52602260045260245ffd5b50919050565b601f8211156102eb57805f5260205f20601f840160051c810160208510156102c95750805b601f840160051c820191505b818110156102e8575f81556001016102d5565b50505b505050565b81516001600160401b0381111561030957610309610105565b61031d81610317845461026c565b846102a4565b602080601f831160018114610350575f84156103395750858301515b5f19600386901b1c1916600185901b1785556103a7565b5f85815260208120601f198616915b8281101561037e5788860151825594840194600190910190840161035f565b508582101561039b57878501515f19600388901b60f8161c191681555b505060018460011b0185555b505050505050565b6102d5806103bc5f395ff3fe608060405234801561000f575f80fd5b506004361061003f575f3560e01c8063409e2205146100435780634a3bf3771461006c578063fc36e15b1461008d575b5f80fd5b610056610051366004610145565b6100a0565b604051610063919061015c565b60405180910390f35b61007f61007a3660046101bc565b505f90565b604051908152602001610063565b61009e61009b3660046101bc565b50565b005b5f81815481106100ae575f80fd5b905f5260205f20015f9150905080546100c690610267565b80601f01602080910402602001604051908101604052809291908181526020018280546100f290610267565b801561013d5780601f106101145761010080835404028352916020019161013d565b820191905f5260205f20905b81548152906001019060200180831161012057829003601f168201915b505050505081565b5f60208284031215610155575f80fd5b5035919050565b5f602080835283518060208501525f5b818110156101885785810183015185820160400152820161016c565b505f604082860101526040601f19601f8301168501019250505092915050565b634e487b7160e01b5f52604160045260245ffd5b5f602082840312156101cc575f80fd5b813567ffffffffffffffff808211156101e3575f80fd5b818401915084601f8301126101f6575f80fd5b813581811115610208576102086101a8565b604051601f8201601f19908116603f01168101908382118183101715610230576102306101a8565b81604052828152876020848701011115610248575f80fd5b826020860160208301375f928101602001929092525095945050505050565b600181811c9082168061027b57607f821691505b60208210810361029957634e487b7160e01b5f52602260045260245ffd5b5091905056fea26469706673582212205e21853238a0a7d1000c9048ea0e9d531c668e627b27ce3349e52498dc45a1b764736f6c63430008170033",
+    "deployedBytecode": "608060405234801561000f575f80fd5b506004361061003f575f3560e01c8063409e2205146100435780634a3bf3771461006c578063fc36e15b1461008d575b5f80fd5b610056610051366004610145565b6100a0565b604051610063919061015c565b60405180910390f35b61007f61007a3660046101bc565b505f90565b604051908152602001610063565b61009e61009b3660046101bc565b50565b005b5f81815481106100ae575f80fd5b905f5260205f20015f9150905080546100c690610267565b80601f01602080910402602001604051908101604052809291908181526020018280546100f290610267565b801561013d5780601f106101145761010080835404028352916020019161013d565b820191905f5260205f20905b81548152906001019060200180831161012057829003601f168201915b505050505081565b5f60208284031215610155575f80fd5b5035919050565b5f602080835283518060208501525f5b818110156101885785810183015185820160400152820161016c565b505f604082860101526040601f19601f8301168501019250505092915050565b634e487b7160e01b5f52604160045260245ffd5b5f602082840312156101cc575f80fd5b813567ffffffffffffffff808211156101e3575f80fd5b818401915084601f8301126101f6575f80fd5b813581811115610208576102086101a8565b604051601f8201601f19908116603f01168101908382118183101715610230576102306101a8565b81604052828152876020848701011115610248575f80fd5b826020860160208301375f928101602001929092525095945050505050565b600181811c9082168061027b57607f821691505b60208210810361029957634e487b7160e01b5f52602260045260245ffd5b5091905056fea26469706673582212205e21853238a0a7d1000c9048ea0e9d531c668e627b27ce3349e52498dc45a1b764736f6c63430008170033",
+    "sourceMap": "120:1057:0:-:0;;;496:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;540:18;;;;:7;;:18;;;;;:::i;:::-;;496:67;120:1057;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;120:1057:0;;;-1:-1:-1;120:1057:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::o;:::-;;;;;;;;;;;;;;;14:127:1;75:10;70:3;66:20;63:1;56:31;106:4;103:1;96:15;130:4;127:1;120:15;146:275;217:2;211:9;282:2;263:13;;-1:-1:-1;;259:27:1;247:40;;-1:-1:-1;;;;;302:34:1;;338:22;;;299:62;296:88;;;364:18;;:::i;:::-;400:2;393:22;146:275;;-1:-1:-1;146:275:1:o;426:1678::-;531:6;562:2;605;593:9;584:7;580:23;576:32;573:52;;;621:1;618;611:12;573:52;648:16;;-1:-1:-1;;;;;713:14:1;;;710:34;;;740:1;737;730:12;710:34;778:6;767:9;763:22;753:32;;804:4;846:7;839:4;835:2;831:13;827:27;817:55;;868:1;865;858:12;817:55;897:2;891:9;919:2;915;912:10;909:36;;;925:18;;:::i;:::-;971:2;968:1;964:10;994:28;1018:2;1014;1010:11;994:28;:::i;:::-;1056:15;;;1126:11;;;1122:20;;;1087:12;;;;1154:19;;;1151:39;;;1186:1;1183;1176:12;1151:39;1218:2;1214;1210:11;1199:22;;1230:844;1246:6;1241:3;1238:15;1230:844;;;1325:3;1319:10;1361:2;1348:11;1345:19;1342:39;;;1377:1;1374;1367:12;1342:39;1404:20;;1459:2;1451:11;;1447:25;-1:-1:-1;1437:53:1;;1486:1;1483;1476:12;1437:53;1527:2;1523;1519:11;1513:18;1554:2;1550;1547:10;1544:36;;;1560:18;;:::i;:::-;1606:51;1630:11;;;-1:-1:-1;;1626:25:1;1622:34;;1606:51;:::i;:::-;1684:2;1677:5;1670:17;1710:2;1753:7;1748:2;1743;1739;1735:11;1731:20;1728:33;1725:53;;;1774:1;1771;1764:12;1725:53;1800:1;1814:140;1828:2;1825:1;1822:9;1814:140;;;1923:10;;;1919:19;;1913:26;1893:13;;;1889:22;;1882:58;1839:10;;1814:140;;;-1:-1:-1;;1999:1:1;1978:14;;;1974:23;;1967:34;;;;2014:18;;-1:-1:-1;1263:12:1;;;;2052;;;;1230:844;;;2093:5;426:1678;-1:-1:-1;;;;;;;;;;426:1678:1:o;2109:380::-;2188:1;2184:12;;;;2231;;;2252:61;;2306:4;2298:6;2294:17;2284:27;;2252:61;2359:2;2351:6;2348:14;2328:18;2325:38;2322:161;;2405:10;2400:3;2396:20;2393:1;2386:31;2440:4;2437:1;2430:15;2468:4;2465:1;2458:15;2322:161;;2109:380;;;:::o;2620:518::-;2722:2;2717:3;2714:11;2711:421;;;2758:5;2755:1;2748:16;2802:4;2799:1;2789:18;2872:2;2860:10;2856:19;2853:1;2849:27;2843:4;2839:38;2908:4;2896:10;2893:20;2890:47;;;-1:-1:-1;2931:4:1;2890:47;2986:2;2981:3;2977:12;2974:1;2970:20;2964:4;2960:31;2950:41;;3041:81;3059:2;3052:5;3049:13;3041:81;;;3118:1;3104:16;;3085:1;3074:13;3041:81;;;3045:3;;2711:421;2620:518;;;:::o;3314:1345::-;3434:10;;-1:-1:-1;;;;;3456:30:1;;3453:56;;;3489:18;;:::i;:::-;3518:97;3608:6;3568:38;3600:4;3594:11;3568:38;:::i;:::-;3562:4;3518:97;:::i;:::-;3670:4;;3727:2;3716:14;;3744:1;3739:663;;;;4446:1;4463:6;4460:89;;;-1:-1:-1;4515:19:1;;;4509:26;4460:89;-1:-1:-1;;3271:1:1;3267:11;;;3263:24;3259:29;3249:40;3295:1;3291:11;;;3246:57;4562:81;;3709:944;;3739:663;2567:1;2560:14;;;2604:4;2591:18;;-1:-1:-1;;3775:20:1;;;3893:236;3907:7;3904:1;3901:14;3893:236;;;3996:19;;;3990:26;3975:42;;4088:27;;;;4056:1;4044:14;;;;3923:19;;3893:236;;;3897:3;4157:6;4148:7;4145:19;4142:201;;;4218:19;;;4212:26;-1:-1:-1;;4301:1:1;4297:14;;;4313:3;4293:24;4289:37;4285:42;4270:58;4255:74;;4142:201;;;4389:1;4380:6;4377:1;4373:14;4369:22;4363:4;4356:36;3709:944;;;;;3314:1345;;:::o;:::-;120:1057:0;;;;;;",
+    "deployedSourceMap": "120:1057:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;193:23;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1000:175;;;;;;:::i;:::-;-1:-1:-1;1066:7:0;;1000:175;;;;1957:25:1;;;1945:2;1930:18;1000:175:0;1811:177:1;662:190:0;;;;;;:::i;:::-;;;;;193:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;14:180:1:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:1;;14:180;-1:-1:-1;14:180:1:o;199:548::-;311:4;340:2;369;358:9;351:21;401:6;395:13;444:6;439:2;428:9;424:18;417:34;469:1;479:140;493:6;490:1;487:13;479:140;;;588:14;;;584:23;;578:30;554:17;;;573:2;550:26;543:66;508:10;;479:140;;;483:3;668:1;663:2;654:6;643:9;639:22;635:31;628:42;738:2;731;727:7;722:2;714:6;710:15;706:29;695:9;691:45;687:54;679:62;;;;199:548;;;;:::o;752:127::-;813:10;808:3;804:20;801:1;794:31;844:4;841:1;834:15;868:4;865:1;858:15;884:922;953:6;1006:2;994:9;985:7;981:23;977:32;974:52;;;1022:1;1019;1012:12;974:52;1062:9;1049:23;1091:18;1132:2;1124:6;1121:14;1118:34;;;1148:1;1145;1138:12;1118:34;1186:6;1175:9;1171:22;1161:32;;1231:7;1224:4;1220:2;1216:13;1212:27;1202:55;;1253:1;1250;1243:12;1202:55;1289:2;1276:16;1311:2;1307;1304:10;1301:36;;;1317:18;;:::i;:::-;1392:2;1386:9;1360:2;1446:13;;-1:-1:-1;;1442:22:1;;;1466:2;1438:31;1434:40;1422:53;;;1490:18;;;1510:22;;;1487:46;1484:72;;;1536:18;;:::i;:::-;1576:10;1572:2;1565:22;1611:2;1603:6;1596:18;1651:7;1646:2;1641;1637;1633:11;1629:20;1626:33;1623:53;;;1672:1;1669;1662:12;1623:53;1728:2;1723;1719;1715:11;1710:2;1702:6;1698:15;1685:46;1773:1;1751:15;;;1768:2;1747:24;1740:35;;;;-1:-1:-1;1755:6:1;884:922;-1:-1:-1;;;;;884:922:1:o;1993:380::-;2072:1;2068:12;;;;2115;;;2136:61;;2190:4;2182:6;2178:17;2168:27;;2136:61;2243:2;2235:6;2232:14;2212:18;2209:38;2206:161;;2289:10;2284:3;2280:20;2277:1;2270:31;2324:4;2321:1;2314:15;2352:4;2349:1;2342:15;2206:161;;1993:380;;;:::o",
+    "sourcePath": "/Users/mathieu/Code/mathieu-bour/mewo-exercises/src/06_SimpleVoting.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.23+commit.f704f362"
+    },
+    "ast": {
+        "absolutePath": "/Users/mathieu/Code/mathieu-bour/mewo-exercises/src/06_SimpleVoting.sol",
+        "exportedSymbols": {
+            "SimpleVoting": [
+                38
+            ]
+        },
+        "id": 39,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".23"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "32:24:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "SimpleVoting",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": {
+                    "id": 2,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "58:61:0",
+                    "text": " @title SimpleVoting\n @dev Basic voting mechanism"
+                },
+                "fullyImplemented": true,
+                "id": 38,
+                "linearizedBaseContracts": [
+                    38
+                ],
+                "name": "SimpleVoting",
+                "nameLocation": "129:12:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "functionSelector": "409e2205",
+                        "id": 5,
+                        "mutability": "mutable",
+                        "name": "options",
+                        "nameLocation": "209:7:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 38,
+                        "src": "193:23:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                            "typeString": "string[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "id": 3,
+                                "name": "string",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "193:6:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                }
+                            },
+                            "id": 4,
+                            "nodeType": "ArrayTypeName",
+                            "src": "193:8:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                                "typeString": "string[]"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "id": 9,
+                        "mutability": "mutable",
+                        "name": "votes",
+                        "nameLocation": "300:5:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 38,
+                        "src": "265:40:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_uint256_$",
+                            "typeString": "mapping(string => uint256)"
+                        },
+                        "typeName": {
+                            "id": 8,
+                            "keyName": "",
+                            "keyNameLocation": "-1:-1:-1",
+                            "keyType": {
+                                "id": 6,
+                                "name": "string",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "273:6:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                }
+                            },
+                            "nodeType": "Mapping",
+                            "src": "265:26:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_uint256_$",
+                                "typeString": "mapping(string => uint256)"
+                            },
+                            "valueName": "",
+                            "valueNameLocation": "-1:-1:-1",
+                            "valueType": {
+                                "id": 7,
+                                "name": "uint256",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "283:7:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                }
+                            }
+                        },
+                        "visibility": "private"
+                    },
+                    {
+                        "body": {
+                            "id": 20,
+                            "nodeType": "Block",
+                            "src": "534:29:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 18,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 16,
+                                            "name": "options",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 5,
+                                            "src": "540:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                                                "typeString": "string storage ref[] storage ref"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "id": 17,
+                                            "name": "_options",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 13,
+                                            "src": "550:8:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                                                "typeString": "string memory[] memory"
+                                            }
+                                        },
+                                        "src": "540:18:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                                            "typeString": "string storage ref[] storage ref"
+                                        }
+                                    },
+                                    "id": 19,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "540:18:0"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 10,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "367:126:0",
+                            "text": " @dev Constructor to create a voting contract with given options\n @param _options The list of voting options"
+                        },
+                        "id": 21,
+                        "implemented": true,
+                        "kind": "constructor",
+                        "modifiers": [],
+                        "name": "",
+                        "nameLocation": "-1:-1:-1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 14,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 13,
+                                    "mutability": "mutable",
+                                    "name": "_options",
+                                    "nameLocation": "524:8:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 21,
+                                    "src": "508:24:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                                        "typeString": "string[]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 11,
+                                            "name": "string",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "508:6:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_string_storage_ptr",
+                                                "typeString": "string"
+                                            }
+                                        },
+                                        "id": 12,
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "508:8:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                                            "typeString": "string[]"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "507:26:0"
+                        },
+                        "returnParameters": {
+                            "id": 15,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "534:0:0"
+                        },
+                        "scope": 38,
+                        "src": "496:67:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 27,
+                            "nodeType": "Block",
+                            "src": "705:147:0",
+                            "statements": []
+                        },
+                        "documentation": {
+                            "id": 22,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "567:92:0",
+                            "text": " @dev Cast a vote for a given option\n @param option The option to vote for"
+                        },
+                        "functionSelector": "fc36e15b",
+                        "id": 28,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "vote",
+                        "nameLocation": "671:4:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 25,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24,
+                                    "mutability": "mutable",
+                                    "name": "option",
+                                    "nameLocation": "690:6:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 28,
+                                    "src": "676:20:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 23,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "676:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "675:22:0"
+                        },
+                        "returnParameters": {
+                            "id": 26,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "705:0:0"
+                        },
+                        "scope": 38,
+                        "src": "662:190:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 36,
+                            "nodeType": "Block",
+                            "src": "1075:100:0",
+                            "statements": []
+                        },
+                        "documentation": {
+                            "id": 29,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "856:141:0",
+                            "text": " @dev Get the total votes for a given option\n @param option The option to query\n @return The total votes for the option"
+                        },
+                        "functionSelector": "4a3bf377",
+                        "id": 37,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "totalVotesFor",
+                        "nameLocation": "1009:13:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 32,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 31,
+                                    "mutability": "mutable",
+                                    "name": "option",
+                                    "nameLocation": "1037:6:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 37,
+                                    "src": "1023:20:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 30,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1023:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1022:22:0"
+                        },
+                        "returnParameters": {
+                            "id": 35,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 34,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 37,
+                                    "src": "1066:7:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 33,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1066:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1065:9:0"
+                        },
+                        "scope": 38,
+                        "src": "1000:175:0",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 39,
+                "src": "120:1057:0",
+                "usedErrors": [],
+                "usedEvents": []
+            }
+        ],
+        "src": "32:1146:0"
+    },
+    "functionHashes": {
+        "options(uint256)": "409e2205",
+        "totalVotesFor(string)": "4a3bf377",
+        "vote(string)": "fc36e15b"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "145000",
+            "executionCost": "infinite",
+            "totalCost": "infinite"
+        },
+        "external": {
+            "options(uint256)": "infinite",
+            "totalVotesFor(string)": "infinite",
+            "vote(string)": "infinite"
+        }
+    }
+}

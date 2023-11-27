@@ -24,5 +24,8 @@ contract TimeBasedActions {
     // TODO: Implement the performAction function
     // It should only allow the action to be taken if the current time is after actionAvailableAfter
     // Once the action is taken, set actionTaken to true
+    require(block.timestamp <= actionAvailableAfter, "Action should be taken after time delay");
+
+    actionTaken = true;
   }
 }

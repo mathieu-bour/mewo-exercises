@@ -2,7 +2,7 @@
 pragma solidity ^0.8.23;
 
 import "forge-std/Test.sol";
-import "../src/11_SimpleERC721.sol";
+import "../src/12_SimpleERC721.sol";
 
 contract SimpleERC721Test is Test {
   SimpleERC721 simpleERC721;

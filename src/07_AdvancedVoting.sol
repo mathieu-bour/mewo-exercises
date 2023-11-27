@@ -2,15 +2,17 @@
 pragma solidity ^0.8.23;
 
 /**
- * @title SimpleVoting
+ * @title AdvancedVoting
  * @dev Basic voting mechanism
  */
-contract SimpleVoting {
+contract AdvancedVoting {
   // Voting options are represented as strings
   string[] public options;
 
   // Mapping from option to number of votes
   mapping(string => uint256) private votes;
+
+  mapping(address => string) private hasVoted;
 
   // TODO: Declare an event for when a new vote is cast
   event Voted(address who, string what);
@@ -23,15 +25,7 @@ contract SimpleVoting {
     options = _options;
   }
 
-  /**
-   * @dev Cast a vote for a given option
-   * @param option The option to vote for
-   */
-  function vote(string memory option) public {
-    // TODO: Implement the vote function to cast a vote
-    // Increment the vote count for the chosen option
-    // Emit the vote cast event
-
+  modifier onlyValidOption(string memory option) {
     bool found;
 
     for (uint256 i; i < options.length; i++) {
@@ -43,7 +37,17 @@ contract SimpleVoting {
     }
 
     require(found, "Choice not found");
+    _;
+  }
 
+  /**
+   * @dev Cast a vote for a given option
+   * @param option The option to vote for
+   */
+  function vote(string memory option) public onlyValidOption(option) {
+    require(!hasVoted[msg.sender], "Already voted");
+
+    hasVoted[msg.sender] = true;
     votes[option]++;
     emit Voted(msg.sender, option);
   }

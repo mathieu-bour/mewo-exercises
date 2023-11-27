@@ -2,7 +2,7 @@
 pragma solidity ^0.8.23;
 
 import "forge-std/Test.sol";
-import "../src/10_SimpleDAO.sol";
+import "../src/11_SimpleDAO.sol";
 
 contract SimpleDAOTest is Test {
   SimpleDAO simpleDAO;
