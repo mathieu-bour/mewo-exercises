@@ -32,7 +32,19 @@ contract MotdTest is Test {
     motd.transferOwnership(user);
   }
 
-  function test_setMessage_admin() external { }
+  function test_setMessage_admin() external {
+    string memory newMessage = "hello 2";
+    vm.prank(admin);
+    motd.setMessage(newMessage);
+    assertEq(motd.message(), newMessage);
+  }
 
-  function test_setMessage_user() external { }
+  function test_setMessage_user() external {
+    string memory previousMessage = motd.message();
+    string memory newMessage = "hello 2";
+    vm.prank(user);
+    vm.expectRevert(Ownable.OnlyOwner.selector);
+    motd.setMessage(newMessage);
+    assertEq(motd.message(), previousMessage); // asert that message has not been changed
+  }
 }
