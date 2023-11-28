@@ -45,9 +45,9 @@ contract AdvancedVoting {
    * @param option The option to vote for
    */
   function vote(string memory option) public onlyValidOption(option) {
-    require(!hasVoted[msg.sender], "Already voted");
+    // require(hasVoted[msg.sender].length == 0, "Already voted");
 
-    hasVoted[msg.sender] = true;
+    hasVoted[msg.sender] = option;
     votes[option]++;
     emit Voted(msg.sender, option);
   }
