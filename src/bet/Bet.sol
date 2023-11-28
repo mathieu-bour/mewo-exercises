@@ -20,6 +20,12 @@ struct BallotInput {
   uint256 endDate;
 }
 
+// envoyer de l'ether
+// bet.createBallot{value: 1 ether}(...args)
+//
+// balance d'un contrat:
+// address(bet).balance
+
 contract Bet {
   uint256 public nextBallotId = 0;
   mapping(uint256 => Ballot) public ballots;
