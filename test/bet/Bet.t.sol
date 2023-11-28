@@ -30,4 +30,24 @@ contract BetTest is Test {
     assertEq(endDate2, endDate);
     assertEq(pot2, value);
   }
+
+  function test_createBallot_multiple() external {
+    string memory question = "hello world?";
+    string[] memory choices = new string[](2);
+    choices[0] = "yes";
+    choices[1] = "no";
+    uint256 endDate = 123456789;
+
+    uint256 value1 = 1 ether;
+    uint256 ballot1 = bet.createBallot{ value: value1 }(BallotInput(question, choices, endDate));
+    (,, uint256 pot1) = bet.ballots(ballot1);
+    assertEq(pot1, value1);
+
+    uint256 value2 = 2 ether;
+    uint256 ballot2 = bet.createBallot{ value: value2 }(BallotInput(question, choices, endDate));
+    (,, uint256 pot2) = bet.ballots(ballot2);
+    assertEq(pot2, value2);
+
+    assertEq(address(bet).balance, value1 + value2);
+  }
 }
